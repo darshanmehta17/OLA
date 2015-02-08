@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="slickstudios.ola.GetNodeDetails">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="?attr/colorPrimary"
+        android:id="@+id/toolbar_node"
+        android:layout_width="match_parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/llAnnViewButton"
+        android:weightSum="2"
+        style="?android:attr/buttonBarStyle"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonNotDone"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/buttonDone"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="wrap_content"
+            android:text="Add Node" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar_node"
+        android:layout_above="@id/llAnnViewButton"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="?attr/colorAccent"
+                android:layout_margin="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Name"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/text_secondary"
+                android:id="@+id/eTNodeName"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="?attr/colorAccent"
+                android:layout_margin="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Location"/>
+            <AutoCompleteTextView
+                android:id="@+id/atvNodeLocation"
+                android:layout_width="match_parent"
+                android:textColor="@color/text_secondary"
+                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="?attr/colorAccent"
+                android:layout_margin="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Time"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="left|center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                style="?android:attr/spinnerStyle"
+                android:textColor="@color/text_secondary"
+                android:id="@+id/bNodeTimePicker"
+                android:text="Choose Time"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="?attr/colorAccent"
+                android:layout_margin="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Duration"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="@color/text_secondary"
+                    android:layout_weight="25"
+                    android:ems="10"
+                    android:text="0"
+                    android:id="@+id/eTNodeHour"
+                     />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:text="Hours"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:inputType="number"
+                    android:layout_weight="25"
+                    android:ems="10"
+                    android:text="5"
+                    android:id="@+id/eTNodeMinutes"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:text="Mins"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="?attr/colorAccent"
+                android:layout_margin="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Priority"/>
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:max="4"
+                android:progress="2"
+                android:id="@+id/seekBarPriority" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
